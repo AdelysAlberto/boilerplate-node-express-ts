@@ -1,0 +1,18 @@
+include: 
+  - project: 'telecom-argentina/coo/fintech/devops/pipelines'
+    ref: master
+    file:
+    - '/ms/.hadolint.yaml' 
+    - '/ms/.hufflehog.yaml' 
+#    - '/ms/.test.yaml'
+    - '/ms/.build.yaml'
+    - '/ms/.deploy.yaml'
+    - '/ms/.sentry.yaml'
+stages:
+  - hadolint_scan
+  - hufflehog_scan
+#  - install_test
+  - build
+#  - test
+  - deploy
+  - sentry
